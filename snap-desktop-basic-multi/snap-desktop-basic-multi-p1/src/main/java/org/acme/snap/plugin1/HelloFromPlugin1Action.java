@@ -1,4 +1,4 @@
-package org.acme.snap.examples;
+package org.acme.snap.plugin1;
 
 import org.esa.snap.rcp.SnapDialogs;
 import org.openide.awt.ActionID;
@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
 )
 @ActionReference(path = "Menu/Tools/Examples")
 @NbBundle.Messages({
-        "CTL_HelloFromPlugin1Action_Name=Plugin Extension Sample (Plugin 1)",
+        "CTL_HelloFromPlugin1Action_Name=Basic Extension Sample (Plugin 1)",
         "CTL_HelloFromPlugin1Action_Text=Hello from Plugin #1!"
 })
 public class HelloFromPlugin1Action implements ActionListener {

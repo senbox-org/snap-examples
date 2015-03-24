@@ -1,4 +1,4 @@
-package org.acme.snap.examples;
+package org.acme.snap.plugin;
 
 import org.esa.snap.rcp.SnapDialogs;
 import org.openide.awt.ActionID;
