@@ -1,7 +1,7 @@
-import beampy
+import snappy
 import numpy
 
-jpy = beampy.jpy
+jpy = snappy.jpy
 
 
 class NdviOp:
@@ -34,9 +34,9 @@ class NdviOp:
         self.upper_band = self._get_band(source_product, upper_band_name)
         self.upper_factor = operator.getParameter('upperFactor')
 
-        ndvi_product = beampy.Product('py_NDVI', 'py_NDVI', width, height)
-        self.ndvi_band = ndvi_product.addBand('ndvi', beampy.ProductData.TYPE_FLOAT32)
-        self.ndvi_flags_band = ndvi_product.addBand('ndvi_flags', beampy.ProductData.TYPE_UINT8)
+        ndvi_product = snappy.Product('py_NDVI', 'py_NDVI', width, height)
+        self.ndvi_band = ndvi_product.addBand('ndvi', snappy.ProductData.TYPE_FLOAT32)
+        self.ndvi_flags_band = ndvi_product.addBand('ndvi_flags', snappy.ProductData.TYPE_UINT8)
 
         operator.setTargetProduct(ndvi_product)
 
