@@ -27,8 +27,6 @@
     <name>SNAP Engine Python Extension Example (NDVI processor)</name>
     <description>Template for a basic Python extension module that provides a new NDVI processor</description>
 	
-	<url></url>
-	
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
