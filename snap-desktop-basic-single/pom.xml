@@ -68,6 +68,13 @@
 
         <dependency>
             <groupId>org.esa.snap</groupId>
+            <artifactId>nbexec</artifactId>
+            <version>${snap.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.esa.snap</groupId>
             <artifactId>snap-rcp</artifactId>
             <version>${snap.version}</version>
         </dependency>
@@ -113,7 +120,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <licenseName>THE BEER-WARE LICENSE</licenseName>
-                    <licenseFile>LICENSE.html</licenseFile>
+                    <licenseFile>LICENSE.txt</licenseFile>
                 </configuration>
             </plugin>
             <plugin>
