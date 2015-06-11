@@ -6,18 +6,13 @@
             <file name="PyNdviOpAction.instance">
                 <attr name="instanceCreate"
                       methodvalue="org.openide.awt.Actions.alwaysEnabled"/>
-                <attr name="delegate"
-                      methodvalue="org.esa.snap.rcp.actions.DefaultOperatorAction.create"/>
-                <attr name="operatorName"
-                      stringvalue="py_ndvi_op"/>
-                <attr name="displayName"
-                      stringvalue="Python NDVI Processor Example"/>
-                <attr name="dialogTitle"
-                      stringvalue="Python NDVI Processor Example"/>
-                <attr name="targetProductNameSuffix"
-                      stringvalue="_ndvi"/>
-                <attr name="ShortDescription"
-                      stringvalue="Generates NDVI from a source product with at least two spectral bands."/>
+                <attr name="delegate" methodvalue="org.esa.snap.rcp.actions.DefaultOperatorAction.create"/>
+                <attr name="operatorName" stringvalue="py_ndvi_op"/>
+                <attr name="displayName" stringvalue="Python NDVI Processor Example"/>
+                <attr name="dialogTitle" stringvalue="Python NDVI Processor Example"/>
+                <!--<attr name="helpId" stringvalue="PyNDVI"/>--> <!-- The helpId if help contents is provided-->
+                <attr name="targetProductNameSuffix" stringvalue="_ndvi"/>
+                <attr name="ShortDescription" stringvalue="Generates NDVI from a source product with at least two spectral bands."/>
             </file>
         </folder>
     </folder>
