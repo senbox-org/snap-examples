@@ -18,7 +18,7 @@
     </folder>
 
     <folder name="Menu">
-        <folder name="Processing">
+        <folder name="Optical">
             <folder name="Examples">
                 <file name="PyNdviOpAction.shadow">
                     <attr name="originalFile" stringvalue="Actions/Operators/PyNdviOpAction.instance"/>
