@@ -33,7 +33,8 @@ import org.esa.snap.framework.gpf.annotations.TargetProduct;
 import org.esa.snap.framework.gpf.pointop.PixelOperator;
 import org.esa.snap.framework.gpf.pointop.ProductConfigurer;
 import org.esa.snap.framework.gpf.pointop.Sample;
-import org.esa.snap.framework.gpf.pointop.SampleConfigurer;
+import org.esa.snap.framework.gpf.pointop.SourceSampleConfigurer;
+import org.esa.snap.framework.gpf.pointop.TargetSampleConfigurer;
 import org.esa.snap.framework.gpf.pointop.WritableSample;
 import org.esa.snap.util.ProductUtils;
 
@@ -66,7 +67,7 @@ public class MyOlciPixelOp extends PixelOperator {
 
     /**
      * Configures all source samples that this operator requires for the computation of target samples.
-     * Source sample are defined by using the provided {@link SampleConfigurer}.
+     * Source sample are defined by using the provided {@link SourceSampleConfigurer}.
      * <p/>
      * <p/> The method is called by {@link #initialize()}.
      *
@@ -74,7 +75,7 @@ public class MyOlciPixelOp extends PixelOperator {
      * @throws OperatorException If the source samples cannot be configured.
      */
     @Override
-    protected void configureSourceSamples(SampleConfigurer sampleConfigurer) throws OperatorException {
+    protected void configureSourceSamples(SourceSampleConfigurer sampleConfigurer) throws OperatorException {
         sampleConfigurer.defineSample(0, findWaveBand(sourceProduct, true, 400, 15, ""));
         sampleConfigurer.defineSample(1, findWaveBand(sourceProduct, true, 412.5, 10, ""));
         sampleConfigurer.defineSample(2, findWaveBand(sourceProduct, true, 442.5, 10, ""));
@@ -100,7 +101,7 @@ public class MyOlciPixelOp extends PixelOperator {
 
     /**
      * Configures all target samples computed by this operator.
-     * Target samples are defined by using the provided {@link SampleConfigurer}.
+     * Target samples are defined by using the provided {@link TargetSampleConfigurer}.
      * <p/>
      * <p/> The method is called by {@link #initialize()}.
      *
@@ -108,7 +109,7 @@ public class MyOlciPixelOp extends PixelOperator {
      * @throws OperatorException If the target samples cannot be configured.
      */
     @Override
-    protected void configureTargetSamples(SampleConfigurer sampleConfigurer) throws OperatorException {
+    protected void configureTargetSamples(TargetSampleConfigurer sampleConfigurer) throws OperatorException {
         sampleConfigurer.defineSample(0, "chl");
         sampleConfigurer.defineSample(1, "l2_flags");
         // add more target samples here
@@ -167,9 +168,9 @@ public class MyOlciPixelOp extends PixelOperator {
      * Computes the target samples from the given source samples.
      * <p/>
      * The number of source/target samples is the maximum defined sample index plus one. Source/target samples are defined
-     * by using the respective {@link SampleConfigurer} in the
-     * {@link #configureSourceSamples(SampleConfigurer) configureSourceSamples} and
-     * {@link #configureTargetSamples(SampleConfigurer) configureTargetSamples} methods.
+     * by using the respective sample configurer in the
+     * {@link #configureSourceSamples(SourceSampleConfigurer) configureSourceSamples} and
+     * {@link #configureTargetSamples(TargetSampleConfigurer) configureTargetSamples} methods.
      * Attempts to read from source samples or write to target samples at undefined sample indices will
      * cause undefined behaviour.
      *
