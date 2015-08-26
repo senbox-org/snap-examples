@@ -1,0 +1,16 @@
+# In order to publish the python operators in this plugin module to SNAP, they need to be listed in this file. On each
+# line an operator class is specified by its fully qualified name.
+# A fully specified name includes the Python package path and the class name both separated by dot characters ('.').
+# For example:
+#
+# cloud_mask.CloudMaskOp
+# water.mci.MciOp
+# land.ndvi.NdviOp
+# land_ops.FaparOp
+#
+# Following Python conventions, the last name in the package path must therefore either be subpackage or a Python
+# file. For the 'water.mci.MciOp' entry above, the pysical representation could either be:
+# (a)  water/mci.py  where mci.py defines the MciOp class
+# (b)  water/mci/__init__.py  where __init__.py defines the MciOp class
+
+ndvi_op.NdviOp
