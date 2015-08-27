@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (C) 2015 Brockmann Consult GmbH (info@brockmann-consult.de)
+  ~
+  ~ This program is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU General Public License as published by the Free
+  ~ Software Foundation; either version 3 of the License, or (at your option)
+  ~ any later version.
+  ~ This program is distributed in the hope that it will be useful, but WITHOUT
+  ~ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  ~ FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+  ~ more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License along
+  ~ with this program; if not, see http://www.gnu.org/licenses/
+  -->
+
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.acme.snap.examples</groupId>
+    <artifactId>snap-jython-examples</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>    
+    <name>SNAP Desktop Jython Plugin Examples</name>
+    <description>This sample project generates a single Jython plugin for the SNAP Desktop application.</description>
+
+    <url>https://senbox.atlassian.net/wiki/display/SNAP/How+to+develop+a+SNAP+extension+module</url>
+
+    <properties>
+        <snap.version>2.0.0-SNAPSHOT</snap.version>
+        <netbeans.version>RELEASE802</netbeans.version>
+    </properties>
+    
+    <!-- 
+        Note: the following dependencies are not used by the example code at all.
+        But they provide full support for smart editing of Python/Jython files in
+        IntelliJ IDEA IDE.
+    -->
+    
+    <dependencies>
+
+        <!-- SNAP Modules -->
+
+        <dependency>
+            <groupId>org.esa.snap</groupId>
+            <artifactId>snap-core</artifactId>
+            <version>${snap.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.esa.snap</groupId>
+            <artifactId>snap-gpf</artifactId>
+            <version>${snap.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.esa.snap</groupId>
+            <artifactId>snap-jython</artifactId>
+            <version>${snap.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.esa.snap</groupId>
+            <artifactId>snap-rcp</artifactId>
+            <version>${snap.version}</version>
+        </dependency>
+
+        <!-- NetBeans Modules -->
+
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-awt</artifactId>
+            <version>${netbeans.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util</artifactId>
+            <version>${netbeans.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util-lookup</artifactId>
+            <version>${netbeans.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-netbeans-api-annotations-common</artifactId>
+            <version>${netbeans.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>snap-repo-public</id>
+            <name>Public Maven Repository for SNAP</name>
+            <url>http://nexus.senbox.net/nexus/content/repositories/public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>snap-repo-public</id>
+            <name>Public Maven Repository for SNAP</name>
+            <url>http://nexus.senbox.net/nexus/content/repositories/public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>
