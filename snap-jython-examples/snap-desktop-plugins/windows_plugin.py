@@ -1,7 +1,6 @@
 from javax.swing import JTree
 from javax.swing import JTable
 from javax.swing import JScrollPane
-from javax.swing import SwingUtilities
 from java.awt import BorderLayout
 from java.lang import Runnable
 
@@ -45,12 +44,12 @@ def open_window(window, mode_name='explorer', request_active=False):
 
 class Starter(Runnable):
     def run(self):
-        open_window(MyWindow1(), "left")
-        open_window(MyWindow2(), "right", True)
+        open_window(MyWindow1(), "explorer")
+        open_window(MyWindow2(), "output", True)
 
 
 def on_snap_start():
-    SwingUtilities.invokeLater(Starter())
+    WindowManager.getDefault().invokeWhenUIReady(Starter())
 
 
 def on_snap_stop():
