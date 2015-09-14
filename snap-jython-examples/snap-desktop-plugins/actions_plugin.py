@@ -13,7 +13,7 @@ class MyAction1(AbstractAction):
         self.putValue(Action.NAME, 'Hey ho!')
 
     def actionPerformed(self, actionEvent):
-        SnapDialogs.showMessage("Hey ho, hello from Jython!", None)
+        SnapDialogs.showInformation("Hey ho, hello from Jython!")
 
 
 class MyAction2(AbstractAction):
@@ -21,7 +21,7 @@ class MyAction2(AbstractAction):
         self.putValue(Action.NAME, 'What is...')
 
     def actionPerformed(self, actionEvent):
-        SnapDialogs.showMessage("...this? Hello from Jython!", None)
+        SnapDialogs.showInformation("...this? Hello from Jython!")
 
 
 class Activator:
