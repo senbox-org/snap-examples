@@ -25,13 +25,13 @@ class MyAction2(AbstractAction):
 
 
 class Activator:
-    def onStart(self):
+    def start(self):
         self.actions = [
             SnapUtils.addAction(MyAction1(), 'Menu/Tools'),
             SnapUtils.addAction(MyAction2(), 'Menu/Help')
         ]
 
-    def onStop(self):
+    def stop(self):
         for action in self.actions:
             if action:
                 SnapUtils.removeAction(action)
