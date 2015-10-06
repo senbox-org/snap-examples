@@ -140,6 +140,13 @@
                     <configuration>
                         <licenseName>THE BEER-WARE LICENSE</licenseName>
                         <licenseFile>../LICENSE.txt</licenseFile>
+                        <moduleDependencies>
+                            <dependency>
+                                <id>org.esa.snap:snap-rcp</id>
+                                <explicitValue>org.esa.snap.snap.rcp > 2.0</explicitValue>
+                            </dependency>
+                        </moduleDependencies>
+
                     </configuration>
                 </plugin>
                 <plugin>
