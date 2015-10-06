@@ -36,7 +36,7 @@ import org.esa.snap.core.gpf.pointop.Sample;
 import org.esa.snap.core.gpf.pointop.SourceSampleConfigurer;
 import org.esa.snap.core.gpf.pointop.TargetSampleConfigurer;
 import org.esa.snap.core.gpf.pointop.WritableSample;
-import org.esa.snap.util.ProductUtils;
+import org.esa.snap.core.util.ProductUtils;
 
 import java.awt.Color;
 
