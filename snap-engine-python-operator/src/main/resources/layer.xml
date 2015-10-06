@@ -6,7 +6,7 @@
             <file name="PyNdviOpAction.instance">
                 <attr name="instanceCreate"
                       methodvalue="org.openide.awt.Actions.alwaysEnabled"/>
-                <attr name="delegate" methodvalue="org.esa.snap.rcp.actions.DefaultOperatorAction.create"/>
+                <attr name="delegate" methodvalue="org.esa.snap.core.gpf.ui.DefaultOperatorAction.create"/>
                 <attr name="operatorName" stringvalue="py_ndvi_op"/>
                 <attr name="displayName" stringvalue="Python NDVI Processor Example"/>
                 <attr name="dialogTitle" stringvalue="Python NDVI Processor Example"/>
