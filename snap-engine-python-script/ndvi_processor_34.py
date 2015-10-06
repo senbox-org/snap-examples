@@ -10,9 +10,8 @@ import snappy
 
 from snappy import jpy
 from snappy import GPF
-from snappy import ProductIO
 
-ProductIOPlugInManager = snappy.jpy.get_type('org.esa.snap.framework.dataio.ProductIOPlugInManager')
+ProductIOPlugInManager = snappy.jpy.get_type('org.esa.snap.core.dataio.ProductIOPlugInManager')
 Logger = jpy.get_type('java.util.logging.Logger')
 Level = jpy.get_type('java.util.logging.Level')
 Arrays = jpy.get_type('java.util.Arrays')
