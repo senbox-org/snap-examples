@@ -13,7 +13,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, see http://www.gnu.org/licenses/
  */
-package org.esa.snap.examples.ndvi_simple;
+package org.acme.snap.examples.ndvi_simple;
 
 import com.bc.ceres.core.PrintWriterProgressMonitor;
 import org.esa.snap.core.dataio.ProductIO;

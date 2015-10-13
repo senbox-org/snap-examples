@@ -14,7 +14,7 @@
  * with this program; if not, see http://www.gnu.org/licenses/
  */
 
-package org.esa.snap.examples.data_export;
+package org.acme.snap.examples.data_export;
 
 import org.esa.snap.core.dataio.ProductIO;
 import org.esa.snap.core.datamodel.GeoCoding;
@@ -49,7 +49,7 @@ public class GcpExportMain {
 
             // open product and extract the geocoding
             Product product = ProductIO.readProduct(args[1]);
-            GeoCoding geoCoding = product.getGeoCoding();
+            GeoCoding geoCoding = product.getSceneGeoCoding();
 
 
             final int width = product.getSceneRasterWidth();

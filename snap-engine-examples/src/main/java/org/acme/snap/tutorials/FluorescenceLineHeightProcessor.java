@@ -1,4 +1,4 @@
-package org.esa.snap.tutorials;
+package org.acme.snap.tutorials;
 
 import org.esa.snap.core.dataio.ProductIO;
 import org.esa.snap.core.dataio.ProductWriter;

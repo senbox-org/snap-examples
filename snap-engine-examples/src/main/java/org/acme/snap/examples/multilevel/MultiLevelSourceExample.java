@@ -1,4 +1,4 @@
-package org.esa.snap.examples.multilevel;
+package org.acme.snap.examples.multilevel;
 
 import com.bc.ceres.glevel.MultiLevelModel;
 import com.bc.ceres.glevel.MultiLevelSource;

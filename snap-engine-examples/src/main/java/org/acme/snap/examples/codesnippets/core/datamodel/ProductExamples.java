@@ -14,7 +14,7 @@
  * with this program; if not, see http://www.gnu.org/licenses/
  */
 
-package org.esa.snap.examples.codesnippets.core.datamodel;
+package org.acme.snap.examples.codesnippets.core.datamodel;
 
 import com.bc.ceres.core.PrintWriterProgressMonitor;
 import org.esa.snap.core.dataio.ProductIO;
@@ -161,7 +161,7 @@ public class ProductExamples {
         // create a tie-point geo coding with both tie point grids
         GeoCoding coding = new TiePointGeoCoding(latGrid, lonGrid, Datum.WGS_84);
         // and attach it to the product
-        product.setGeoCoding(coding);
+        product.setSceneGeoCoding(coding);
 
         return product;
     }

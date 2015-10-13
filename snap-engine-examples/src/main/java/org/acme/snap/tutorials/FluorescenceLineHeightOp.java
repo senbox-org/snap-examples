@@ -1,4 +1,4 @@
-package org.esa.snap.tutorials;
+package org.acme.snap.tutorials;
 
 import com.bc.ceres.core.ProgressMonitor;
 import org.esa.snap.core.datamodel.Band;

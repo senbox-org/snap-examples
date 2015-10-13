@@ -14,7 +14,7 @@
  * with this program; if not, see http://www.gnu.org/licenses/
  */
 
-package org.esa.snap.examples.data_export;
+package org.acme.snap.examples.data_export;
 
 
 import com.bc.ceres.core.ProgressMonitor;
