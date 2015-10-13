@@ -145,22 +145,25 @@ public class MyOlciPixelOp extends PixelOperator {
     protected void configureTargetProduct(ProductConfigurer productConfigurer) {
         super.configureTargetProduct(productConfigurer);
 
+        Product tp = productConfigurer.getTargetProduct();
+
         if (copySourceFlags) {
             // Copy Level-1 quality information to target
-            ProductUtils.copyFlagBands(sourceProduct, targetProduct, true);
+            ProductUtils.copyFlagBands(sourceProduct, tp, true);
         }
 
-        targetProduct.addBand("chl", ProductData.TYPE_FLOAT32);
-        targetProduct.addBand("l2_flags", ProductData.TYPE_INT16);
+        tp.addBand("chl", ProductData.TYPE_FLOAT32);
+        final Band l2_flagsBand = tp.addBand("l2_flags", ProductData.TYPE_INT16);
 
-        FlagCoding qualityFlags = new FlagCoding("l2_flags");
-        qualityFlags.addFlag("INVALID", 0x01, "Pixel is invalid");
+        FlagCoding l2FlagsFlagCoding = new FlagCoding("l2_flags");
+        l2FlagsFlagCoding.addFlag("INVALID", 0x01, "Pixel is invalid");
         // add more flags here
 
-        targetProduct.getFlagCodingGroup().add(qualityFlags);
+        tp.getFlagCodingGroup().add(l2FlagsFlagCoding);
+        l2_flagsBand.setSampleCoding(l2FlagsFlagCoding);
         // add more flag codings here
 
-        targetProduct.addMask("invalid", "l2_flags.INVALID", "Pixel is invalid", Color.RED, 0.7);
+        tp.addMask("invalid", "l2_flags.INVALID", "Pixel is invalid", Color.RED, 0.7);
         // add more masks here
     }
 
