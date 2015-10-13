@@ -89,7 +89,7 @@ public class SimpleExampleOp extends SampleOperator {
     }
 
     private boolean isGeoCodingMissing() {
-        return getSourceProduct().getGeoCoding() == null;
+        return getSourceProduct().getSceneGeoCoding() == null;
     }
 
     private void checkForRequiredRaster() {
