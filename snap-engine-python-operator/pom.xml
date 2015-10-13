@@ -29,7 +29,26 @@
 	
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <snap.version>2.0.0-SNAPSHOT</snap.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.esa.snap</groupId>
+            <artifactId>snap-rcp</artifactId>
+            <version>${snap.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.esa.snap</groupId>
+            <artifactId>snap-python</artifactId>
+            <version>${snap.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.esa.snap</groupId>
+            <artifactId>snap-core</artifactId>
+            <version>${snap.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -38,6 +57,24 @@
                 <artifactId>nbm-maven-plugin</artifactId>
                 <version>3.14</version>
                 <extensions>true</extensions>
+                <configuration>
+                    <licenseName>THE BEER-WARE LICENSE</licenseName>
+                    <licenseFile>LICENSE.txt</licenseFile>
+                    <moduleDependencies>
+                        <dependency>
+                            <id>org.esa.snap:snap-rcp</id>
+                            <explicitValue>org.esa.snap.snap.rcp > 2.0</explicitValue>
+                        </dependency>
+                        <dependency>
+                            <id>org.esa.snap:snap-core</id>
+                            <explicitValue>org.esa.snap.snap.core > 2.0</explicitValue>
+                        </dependency>
+                        <dependency>
+                            <id>org.esa.snap:snap-python</id>
+                            <explicitValue>org.esa.snap.snap.python > 2.0</explicitValue>
+                        </dependency>
+                    </moduleDependencies>
+                </configuration>
             </plugin>
 			<plugin>
                 <artifactId>maven-jar-plugin</artifactId>
