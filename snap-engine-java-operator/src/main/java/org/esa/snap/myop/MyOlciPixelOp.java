@@ -24,6 +24,7 @@ import org.esa.snap.core.datamodel.ProductData;
 import org.esa.snap.core.datamodel.SampleCoding;
 import org.esa.snap.core.datamodel.TiePointGrid;
 import org.esa.snap.core.datamodel.VirtualBand;
+import org.esa.snap.core.dataop.barithm.BandArithmetic;
 import org.esa.snap.core.gpf.OperatorException;
 import org.esa.snap.core.gpf.OperatorSpi;
 import org.esa.snap.core.gpf.annotations.OperatorMetadata;
@@ -36,7 +37,9 @@ import org.esa.snap.core.gpf.pointop.Sample;
 import org.esa.snap.core.gpf.pointop.SourceSampleConfigurer;
 import org.esa.snap.core.gpf.pointop.TargetSampleConfigurer;
 import org.esa.snap.core.gpf.pointop.WritableSample;
+import org.esa.snap.core.jexp.ParseException;
 import org.esa.snap.core.util.ProductUtils;
+import org.esa.snap.core.util.StringUtils;
 
 import java.awt.Color;
 
@@ -53,6 +56,8 @@ import java.awt.Color;
         copyright = "<your copyright info here>")
 public class MyOlciPixelOp extends PixelOperator {
 
+    private boolean hasValidPixelExpression;
+
     @SourceProduct(alias = "source", description = "The source product.")
     private Product sourceProduct;
 
@@ -64,6 +69,10 @@ public class MyOlciPixelOp extends PixelOperator {
 
     @Parameter(defaultValue = "true", description = "Weather or not to copy the Level-1 quality information.")
     private boolean copySourceFlags;
+
+    @Parameter(defaultValue = "!quality_flags_invalid",
+            description = "Computation will only be performed on pixels for which this condition is true")
+    private String validPixelExpression;
 
     /**
      * Configures all source samples that this operator requires for the computation of target samples.
@@ -97,6 +106,22 @@ public class MyOlciPixelOp extends PixelOperator {
         sampleConfigurer.defineSample(18, findWaveBand(sourceProduct, true, 900, 10, ""));
         sampleConfigurer.defineSample(19, findWaveBand(sourceProduct, true, 940, 20, ""));
         sampleConfigurer.defineSample(20, findWaveBand(sourceProduct, true, 1020, 40, ""));
+        checkValidPixelExpression();
+        if (hasValidPixelExpression) {
+            sampleConfigurer.defineComputedSample(21, ProductData.TYPE_UINT8, validPixelExpression);
+        }
+    }
+
+    private void checkValidPixelExpression() {
+        if (StringUtils.isNullOrEmpty(validPixelExpression)) {
+            hasValidPixelExpression = false;
+        }
+        try {
+            BandArithmetic.parseExpression(validPixelExpression, sourceProduct);
+        } catch (ParseException e) {
+            throw new OperatorException("Invalid expression: " + e.getMessage());
+        }
+        hasValidPixelExpression = true;
     }
 
     /**
@@ -184,6 +209,10 @@ public class MyOlciPixelOp extends PixelOperator {
      */
     @Override
     protected void computePixel(int x, int y, Sample[] sourceSamples, WritableSample[] targetSamples) {
+        if (hasValidPixelExpression && !sourceSamples[21].getBoolean()) {
+            targetSamples[0].set(Double.NaN);
+            return;
+        }
         double rad1 = sourceSamples[0].getDouble();
         double rad2 = sourceSamples[1].getDouble();
         double rad3 = sourceSamples[2].getDouble();
