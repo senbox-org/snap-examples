@@ -1,13 +1,11 @@
 package org.acme.snap.examples.multilevel;
 
-import com.bc.ceres.glevel.MultiLevelModel;
 import com.bc.ceres.glevel.MultiLevelSource;
 import com.bc.ceres.glevel.support.AbstractMultiLevelSource;
 import com.bc.ceres.glevel.support.DefaultMultiLevelImage;
 import org.esa.snap.core.datamodel.Band;
 import org.esa.snap.core.datamodel.Product;
 import org.esa.snap.core.datamodel.ProductData;
-import org.esa.snap.core.image.ImageManager;
 import org.esa.snap.core.image.RasterDataNodeOpImage;
 import org.esa.snap.core.image.ResolutionLevel;
 
@@ -74,13 +72,12 @@ public class MultiLevelSourceExample {
         Band imagBand = product.addBand("imag", "2 * X * Y", ProductData.TYPE_FLOAT64);
         Band magnitudeBand = product.addBand("magnitude", ProductData.TYPE_FLOAT64);
 
-        final MultiLevelModel multiLevelModel = ImageManager.getMultiLevelModel(realBand);
-        final MultiLevelSource multiLevelSource = new AbstractMultiLevelSource(multiLevelModel) {
+        final MultiLevelSource multiLevelSource = new AbstractMultiLevelSource(realBand.createMultiLevelModel()) {
 
             @Override
             public void reset() {
                 super.reset();
-                magnitudeBand.fireProductNodeDataChanged();
+                magnitudeBand.fireProductNodeDataChanged();                      SNAP-255: Make data model consistent with multi-size requirements Moved get/createMultiLevelModel from ImageManager into RasterDataNode and Product
             }
 
             @Override
