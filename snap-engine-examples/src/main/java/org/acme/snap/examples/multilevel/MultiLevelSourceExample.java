@@ -77,7 +77,7 @@ public class MultiLevelSourceExample {
             @Override
             public void reset() {
                 super.reset();
-                magnitudeBand.fireProductNodeDataChanged();                      SNAP-255: Make data model consistent with multi-size requirements Moved get/createMultiLevelModel from ImageManager into RasterDataNode and Product
+                magnitudeBand.fireProductNodeDataChanged();
             }
 
             @Override
