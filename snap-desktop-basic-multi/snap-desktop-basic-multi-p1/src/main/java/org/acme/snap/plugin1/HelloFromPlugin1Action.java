@@ -1,6 +1,6 @@
 package org.acme.snap.plugin1;
 
-import org.esa.snap.rcp.SnapDialogs;
+import org.esa.snap.rcp.util.Dialogs;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionRegistration;
@@ -24,7 +24,7 @@ import java.awt.event.ActionListener;
 public class HelloFromPlugin1Action implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        SnapDialogs.showInformation(Bundle.CTL_HelloFromPlugin1Action_Text(), null);
+        Dialogs.showInformation(Bundle.CTL_HelloFromPlugin1Action_Text(), null);
     }
 }
 

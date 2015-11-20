@@ -17,9 +17,9 @@
 package org.esa.snap.examples.selection;
 
 import org.esa.snap.core.datamodel.Product;
-import org.esa.snap.rcp.SnapDialogs;
 import org.esa.snap.rcp.actions.AbstractSnapAction;
 import org.esa.snap.rcp.actions.tools.AttachPixelGeoCodingAction;
+import org.esa.snap.rcp.util.Dialogs;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionRegistration;
@@ -86,8 +86,8 @@ public class SelectionAwareAction extends AbstractSnapAction implements ContextA
     @Override
     public void actionPerformed(ActionEvent e) {
         // if the action is invoked the number of selected products is shown.
-        SnapDialogs.showInformation(Bundle.CTL_SelectionAwareActionDialogTitle(),
-                                    String.format("Number of selected products is %d", getNumSelectedProducts()), null);
+        Dialogs.showInformation(Bundle.CTL_SelectionAwareActionDialogTitle(),
+                                String.format("Number of selected products is %d", getNumSelectedProducts()), null);
 
     }
 

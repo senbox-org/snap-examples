@@ -1,6 +1,6 @@
 package org.esa.snap.examples.menu;
 
-import org.esa.snap.rcp.SnapDialogs;
+import org.esa.snap.rcp.util.Dialogs;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionRegistration;
@@ -43,7 +43,7 @@ public class GenerateMenuItemAction implements ActionListener {
             newMenuItem.setAttribute("instanceCreate", action);
             newMenuItem.setAttribute("instanceClass", action.getClass().getName());
         } catch (IOException e1) {
-            SnapDialogs.showError("Error: " + e1.getMessage());
+            Dialogs.showError("Error: " + e1.getMessage());
         }
     }
 
@@ -60,7 +60,7 @@ public class GenerateMenuItemAction implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            SnapDialogs.showInformation("Hello, I am " + getName(), null);
+            Dialogs.showInformation("Hello, I am " + getName(), null);
         }
     }
 }
