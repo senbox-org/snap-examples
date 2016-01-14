@@ -29,7 +29,7 @@
 	
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <snap.version>2.0.0</snap.version>
+        <snap.version>[2.0.0,3.0.0-SNAPSHOT)</snap.version>
         <javahelp.version>2.0.05</javahelp.version>
         <netbeans.installation>C:\Users\Norman\JavaProjects\senbox\snap-desktop\snap-application\target\snap</netbeans.installation>
     </properties>

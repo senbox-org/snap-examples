@@ -26,7 +26,7 @@
     <description>SNAP Engine Programming Examples</description>
 
     <properties>
-        <snap.version>2.0.0-SNAPSHOT</snap.version>
+        <snap.version>[2.0.0,3.0.0-SNAPSHOT)</snap.version>
     </properties>
 
     <dependencies>

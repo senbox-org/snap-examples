@@ -29,7 +29,7 @@
     <url>https://senbox.atlassian.net/wiki/display/SNAP/How+to+develop+a+SNAP+extension+module</url>
 
     <properties>
-        <snap.version>2.0.0</snap.version>
+        <snap.version>[2.0.0,3.0.0-SNAPSHOT)</snap.version>
         <netbeans.version>RELEASE802</netbeans.version>
     </properties>
 
