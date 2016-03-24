@@ -22,14 +22,14 @@
 
     <groupId>org.esa.snap</groupId>
     <artifactId>snap-engine-java-operator</artifactId>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>3.0.0</version>
     <packaging>nbm</packaging>    
     <name>SNAP Engine Java Operator Template</name>
     <description>Template for a basic Java extension module that provides a new data operators/processors</description>
 	
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <snap.version>3.0.0-SNAPSHOT</snap.version>
+        <snap.version>3.0.0</snap.version>
         <javahelp.version>2.0.05</javahelp.version>
         <netbeans.installation>C:\Users\Norman\JavaProjects\senbox\snap-desktop\snap-application\target\snap</netbeans.installation>
     </properties>
