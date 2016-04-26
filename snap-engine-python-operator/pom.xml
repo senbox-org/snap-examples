@@ -83,27 +83,42 @@
     </pluginRepositories>
 
     <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/python</directory>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
                 <version>3.14</version>
                 <extensions>true</extensions>
+                <dependencies>
+                    <dependency>
+                        <groupId>javax.help</groupId>
+                        <artifactId>javahelp</artifactId>
+                        <version>2.0.05</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <licenseName>THE BEER-WARE LICENSE</licenseName>
                     <licenseFile>LICENSE.txt</licenseFile>
                     <moduleDependencies>
                         <dependency>
                             <id>org.esa.snap:snap-rcp</id>
-                            <explicitValue>org.esa.snap.snap.rcp > 2.0</explicitValue>
+                            <explicitValue>org.esa.snap.snap.rcp > 3.0</explicitValue>
                         </dependency>
                         <dependency>
                             <id>org.esa.snap:snap-core</id>
-                            <explicitValue>org.esa.snap.snap.core > 2.0</explicitValue>
+                            <explicitValue>org.esa.snap.snap.core > 3.0</explicitValue>
                         </dependency>
                         <dependency>
                             <id>org.esa.snap:snap-python</id>
-                            <explicitValue>org.esa.snap.snap.python > 2.0</explicitValue>
+                            <explicitValue>org.esa.snap.snap.python > 3.0</explicitValue>
                         </dependency>
                     </moduleDependencies>
                 </configuration>
