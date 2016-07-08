@@ -22,14 +22,14 @@
 
     <groupId>com.acme.snap.examples</groupId>
     <artifactId>snap-engine-python-operator</artifactId>
-    <version>4.0.0</version>
+    <version>5.0.0-SNAPSHOT</version>
     <packaging>nbm</packaging>    
     <name>SNAP Engine Python Extension Example (NDVI processor)</name>
     <description>Template for a basic Python extension module that provides a new NDVI processor</description>
 	
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <snap.version>4.0.0</snap.version>
+        <snap.version>5.0.0-SNAPSHOT</snap.version>
     </properties>
 
     <dependencies>
