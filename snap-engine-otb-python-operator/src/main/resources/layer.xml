@@ -1,0 +1,37 @@
+<filesystem>
+
+    <folder name="Actions">
+        <folder name="Operators">
+            <file name="PyNdviOpAction.instance">
+                <attr name="instanceCreate"
+                      methodvalue="org.openide.awt.Actions.alwaysEnabled"/>
+                <attr name="delegate" methodvalue="org.esa.snap.core.gpf.ui.DefaultOperatorAction.create"/>
+                <attr name="operatorName" stringvalue="py_ndvi_op"/>
+                <attr name="displayName" stringvalue="NDVI using OTB Python wrapping"/>
+                <attr name="dialogTitle" stringvalue="NDVI using OTB Python wrapping"/>
+                <attr name="helpId" stringvalue="pyNdviDoc"/>  <!--The helpId if help contents is provided-->
+                <attr name="targetProductNameSuffix" stringvalue="_ndvi"/>
+                <attr name="ShortDescription" stringvalue="Generates NDVI from a source product with at least two spectral bands."/>
+            </file>
+        </folder>
+    </folder>
+
+    <folder name="Menu">
+        <folder name="Optical">
+            <folder name="OTB">
+                <file name="PyNdviOpAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Operators/PyNdviOpAction.instance"/>
+                    <attr name="position" intvalue="0"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+
+    <folder name="Services">
+        <folder name="JavaHelp">
+            <file name="helpset.xml" url="helpset.xml">
+                <attr name="position" intvalue="4600"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>
