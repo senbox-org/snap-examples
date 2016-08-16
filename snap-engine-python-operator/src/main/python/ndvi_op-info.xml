@@ -46,6 +46,8 @@
             <label>Lower band name</label>
             <dataType>java.lang.String</dataType>
             <defaultValue>radiance_7</defaultValue>
+            <!-- An empty parameter is not allowed -->
+            <notEmpty>true</notEmpty>
         </parameter>
         <parameter>
             <name>upperFactor</name>
@@ -59,6 +61,7 @@
             <label>Upper band name</label>
             <dataType>java.lang.String</dataType>
             <defaultValue>radiance_10</defaultValue>
+            <notEmpty>true</notEmpty>
         </parameter>
     </parameters>
 
