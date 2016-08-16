@@ -1,0 +1,9 @@
+/**
+ * ------------------------------------------------------------------------------------------
+ * THE BEERWARE LICENSE Version 42++
+ * The licensee can do whatever he wants with this stuff, but he does it at his own risk.
+ * Should the user of this stuff meet the author and consider this stuff useful, the licensee
+ * is encouraged to either buy the licensor "as token of appreciation" a beer, wine (vitis
+ * vinifera), cocktail or any drink based on hot milk, or drink one of theses himself.
+ * ------------------------------------------------------------------------------------------
+ */
