@@ -6,8 +6,6 @@ import snappy
 class NdviOp:
 
     def __init__(self):
-        #jpy = snappy.jpy
-        #jpy.diag.flags = jpy.diag.F_ALL
         self.lower_band = None
         self.upper_band = None
         self.ndvi_band = None
@@ -54,12 +52,8 @@ class NdviOp:
         lower_samples = lower_tile.getSamplesFloat()
         upper_samples = upper_tile.getSamplesFloat()
 
-        #print('compute: lower_samples =', lower_samples[0], ', upper_samples =', upper_samples[0])
-
         lower_data = numpy.array(lower_samples, dtype=numpy.float32) * self.lower_factor
         upper_data = numpy.array(upper_samples, dtype=numpy.float32) * self.upper_factor
-
-        #print('compute: lower_data =', lower_data[0], ', upper_data =', upper_data[0])
 
         ndvi = (upper_data - lower_data ) / (upper_data + lower_data )
 

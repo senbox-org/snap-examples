@@ -24,8 +24,8 @@
     <artifactId>snap-engine-python-operator</artifactId>
     <version>5.0.0-SNAPSHOT</version>
     <packaging>nbm</packaging>    
-    <name>SNAP Engine Python Extension Example (NDVI processor)</name>
-    <description>Template for a basic Python extension module that provides a new NDVI processor</description>
+    <name>SNAP Engine Python Operator Example</name>
+    <description>Example for a basic Python operator module</description>
 	
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
