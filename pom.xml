@@ -20,7 +20,7 @@
     <groupId>com.acme.snap.examples</groupId>
     <artifactId>snap-examples</artifactId>
     <version>5.0.0-SNAPSHOT</version>
-    <packaging>nbm</packaging>
+    <packaging>pom</packaging>
 
     <name>SNAP Examples</name>
     <description>SNAP Programming Examples</description>
