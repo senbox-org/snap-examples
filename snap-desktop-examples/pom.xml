@@ -27,7 +27,7 @@
 
     <properties>
         <snap.version>5.0.0-SNAPSHOT</snap.version>
-        <netbeans.version>RELEASE802</netbeans.version>
+        <netbeans.version>RELEASE81</netbeans.version>
     </properties>
 
     <dependencies>
