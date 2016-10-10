@@ -29,7 +29,7 @@
 
     <properties>
         <snap.version>5.0.0-SNAPSHOT</snap.version>
-        <netbeans.version>RELEASE81</netbeans.version>
+        <netbeans.version>RELEASE82</netbeans.version>
     </properties>
     
     <!-- 
