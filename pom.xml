@@ -19,14 +19,14 @@
 
     <groupId>com.acme.snap.examples</groupId>
     <artifactId>snap-examples</artifactId>
-    <version>5.0.0-SNAPSHOT</version>
+    <version>5.0.0</version>
     <packaging>pom</packaging>
 
     <name>SNAP Examples</name>
     <description>SNAP Programming Examples</description>
 
     <properties>
-        <snap.version>5.0.0-SNAPSHOT</snap.version>
+        <snap.version>5.0.0</snap.version>
     </properties>
 
 	<modules>
