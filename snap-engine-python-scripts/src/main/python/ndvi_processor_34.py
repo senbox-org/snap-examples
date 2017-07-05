@@ -3,21 +3,17 @@
 #   > snap --nogui --nosplash --python C:\Python34\python.exe C:\Users\Norman\JavaProjects\senbox
 
 import sys
-sys.path.append('C:\\Users\\Norman\\JavaProjects\\senbox')
+# sys.path.append('C:\\Users\\Norman\\JavaProjects\\senbox')
 
 import snappy
 #print('snappy.__file__:', snappy.__file__)
 
-from snappy import jpy
-from snappy import GPF
+from snappy import jpy, GPF, HashMap, File
 
 ProductIOPlugInManager = snappy.jpy.get_type('org.esa.snap.core.dataio.ProductIOPlugInManager')
 Logger = jpy.get_type('java.util.logging.Logger')
 Level = jpy.get_type('java.util.logging.Level')
 Arrays = jpy.get_type('java.util.Arrays')
-File = jpy.get_type('java.io.File')
-String = jpy.get_type('java.lang.String')
-HashMap = jpy.get_type('java.util.HashMap')
 
 Logger.getLogger('').setLevel(Level.OFF)
 snappy.SystemUtils.LOG.setLevel(Level.OFF)
