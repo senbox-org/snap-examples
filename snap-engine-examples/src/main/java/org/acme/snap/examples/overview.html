@@ -17,7 +17,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
-    <TITLE>examples</TITLE>
+    <TITLE>SNAP Examples</TITLE>
     <!--
 
       $Id: overview.html,v 1.2 2007/02/09 11:05:57 marcop Exp $
@@ -38,81 +38,52 @@
     -->
 </HEAD>
 
-<BODY bgColor=white>
+<h2>The SNAP API Source Code Examples</h2>
 
-This is the documentation for the Java source code examples provided along with
-the BEAM Software. It shows the basic concepts on how to use the BEAM Java API
-for your own applications:
+The examples are available in the <a href="https://github.com/senbox-org/snap-examples">snap-examples repository on GitHub</a>.
+Provided here is a short documentation for the Java source code examples provided along with
+the SNAP Software. The examples show the basic concepts how to use the SNAP Java API
+for your own applications or how to extend SNAP by writing new modules.
 
+<p>Very simple examples showing how to read data from a product and write them out:
 <ul>
-    <li>{@link org.esa.snap.examples.data_export}: very simple examples showing how to read data
-        from a product and write them out: The package conatins three source
-        files:
-        <ul>
-            <li><a href="{@docRoot}/data_export/BandWriterMain.java.txt">BandWriterMain.java</a></li>
-            <li><a href="{@docRoot}/data_export/BitmaskWriterMain.java.txt">BitmaskWriterMain.java</a></li>
-            <li><a href="{@docRoot}/data_export/TiePointGridWriterMain.java.txt">TiePointGridWriterMain.java</a></li>
-        </ul>
+    <li>
+        <a href="https://github.com/senbox-org/snap-examples/blob/master/snap-engine-examples/src/main/java/org/acme/snap/examples/data_export/BandWriterMain.java">BandWriterMain.java</a>
     </li>
-    <li>{@link org.esa.snap.examples.ndvi_simple}: a very simple NDVI (normalized differential
-        vegetation index) processor. The package contains a single source file:
-        <ul>
-            <li><a href="{@docRoot}/ndvi_simple/NdviSimpleMain.java.txt">NdviSimpleMain.java</a>
-        </ul>
+    <li>
+        <a href="https://github.com/senbox-org/snap-examples/blob/master/snap-engine-examples/src/main/java/org/acme/snap/examples/data_export/BitmaskWriterMain.java">BitmaskWriterMain.java</a>
     </li>
-    <li>{@link org.esa.snap.examples.ndvi_processor}: a more advanced NDVI processor which uses parts
-        of the BEAM processing framework. The example comprises two source files:
-        <ul>
-            <li><a href="{@docRoot}/ndvi_processor/NdviProcessorMain.java.txt">NdviProcessorMain.java</a>
-            <li><a href="{@docRoot}/ndvi_processor/NdviProcessor.java.txt">NdviProcessor.java</a>
-            <li><a href="{@docRoot}/ndvi_processor/NdviProcReq.xml">a NDVI processing request file</a>
-        </ul>
+    <li>
+        <a href="https://github.com/senbox-org/snap-examples/blob/master/snap-engine-examples/src/main/java/org/acme/snap/examples/data_export/TiePointGridWriterMain.java">TiePointGridWriterMain.java</a>
     </li>
 </ul>
 
-<p>
-    You can also download the bundled examples as a single <a href="{@docRoot}/../examples.zip">ZIP file</a>.
-    In order to compile the examples, the ZIP file also contains a <code>build.xml</code> file for use
-    with the open source tool
-    <a href="http://jakarta.apache.org/ant/"><code>ant</code></a> (a kind of <code>make</code> for Java)
-    developed by the <a href="http://www.apache.org">Apache Software Foundation</a>.
+<p>A very simple NDVI (normalized differential vegetation index) processing implementation. The package contains a single source file:
+<ul>
+    <li>
+        <a href="https://github.com/senbox-org/snap-examples/blob/master/snap-engine-examples/src/main/java/org/acme/snap/examples/ndvi_simple/NdviSimpleMain.java">NdviSimpleMain.java</a>
+    </li>
+</ul>
+
+<p>A more advanced processor which uses parts of the SNAP Graph Processing Framework (GPF) can be found in the GitHub examples at
+    <a href="https://github.com/senbox-org/snap-examples/tree/master/snap-engine-java-operator">snap-engine-java-operator</a>.
+    This example is desgned to be build as SNAP module to be separately added to an existing SNAP installation.
 </p>
 
-<p>
-    Newcomers who want to develop export tools and data processors are invited to look at
-    {@link org.esa.snap.examples.data_export} and {@link org.esa.snap.examples.ndvi_simple} first.
-    The first package contains basic tools which lets you extract geophysical data from
-    products. The {@link org.esa.snap.examples.ndvi_simple} package contains a few lines of code showing you how to
-    compute the NDVI value from a MERIS Level 1b input product.
+<p>SNAP can also understand Python code. If you like to implement a processor in Python this example is for you:
+    <a href="https://github.com/senbox-org/snap-examples/tree/master/snap-engine-python-operator">snap-engine-python-operator</a>
 </p>
 
-<p>
-    Once you are familiar with the basic concepts, please examine the {@link org.esa.snap.examples.ndvi_processor}
-    example
-    contained in this package. {@link org.esa.snap.examples.ndvi_processor.NdviProcessorMain} implements is a
-    fully functional data processor which uses some important concepts and mechanisms of the BEAM
-    processing framework. Don't be afraid, it is still very easy code. It can be used as a template
-    for your own data processors.
+<p>Newcomers who want to develop export tools and/or data processors are invited to look at the
+    <a href="https://senbox.atlassian.net/wiki/display/SNAP/Developer+Guide">Developer Guide</a> which we have prepared in our wiki.
 </p>
-
 
 <p>This is the list of the most important API packages used by the examples:
-    <ol>
-        <li>
-            <a href="{@docRoot}/../api-doc/org/esa/snap/core/datamodel/package-summary.html">The <code>
-                org.esa.snap.core.datamodel</code> package.</a>
-        </li>
-        <li>
-            <a href="{@docRoot}/../api-doc/org/esa/snap/core/dataio/package-summary.html">The <code>
-                org.esa.snap.core.dataio</code> package.</a>
-        </li>
-        <li>
-            <a href="{@docRoot}/../api-doc/org/esa/snap/util/package-summary.html">The <code>org.esa.snap.util</code>
-                package.</a>
-        </li>
-    </ol>
-
-</p>
-
+<ol>
+    <li>The <code>{@link org.esa.snap.core.datamodel}</code> package.</li>
+    <li>The <code>{@link org.esa.snap.core.dataio}</code> package.</li>
+    <li>The <code>{@link org.esa.snap.core.gpf}</code> package.</li>
+    <li>The <code>{@link org.esa.snap.util}</code> package.</li>
+</ol>
 </BODY>
 </HTML>
