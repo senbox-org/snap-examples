@@ -15,7 +15,6 @@
  */
 package org.acme.snap.examples.data_export;
 
-import com.bc.ceres.core.ProgressMonitor;
 import org.esa.snap.core.dataio.ProductIO;
 import org.esa.snap.core.dataio.ProductSubsetBuilder;
 import org.esa.snap.core.dataio.ProductSubsetDef;
@@ -23,8 +22,9 @@ import org.esa.snap.core.datamodel.Band;
 import org.esa.snap.core.datamodel.Product;
 import org.esa.snap.core.datamodel.TiePointGrid;
 import org.esa.snap.core.jexp.ParseException;
-import org.esa.snap.core.jexp.Term;
 
+import java.awt.Rectangle;
+import java.awt.image.RenderedImage;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -63,27 +63,26 @@ import java.io.IOException;
  * @see Product
  * @see Band
  * @see TiePointGrid
- * @see BitmaskWriterMain#main
  */
-public class BitmaskWriterMain {
+public class MaskWriterMain {
 
     /**
-     * The main method. Fetches the input arguments and delgates the call to the <code>run</code> method.
+     * The main method. Fetches the input arguments and delegates the call to the <code>run</code> method.
      *
      * @param args the program arguments
      */
     public static void main(String[] args) {
         if (args.length < 3) {
-            System.out.println("parameter usage: <input-file> <output-file> <bit-mask-expr>");/*I18N*/
+            System.out.println("parameter usage: <input-file> <output-file> <mask-expr>");
             return;
         }
         // Get arguments
         String inputPath = args[0];
         String outputPath = args[1];
-        String bitmaskExpr = args[2];
+        String maskExpr = args[2];
         try {
             // Pass arguments to actual program code
-            run(inputPath, outputPath, bitmaskExpr);
+            run(inputPath, outputPath, maskExpr);
         } catch (IOException e) {
             System.out.println("I/O error: " + e.getMessage());
         } catch (ParseException e) {
@@ -94,16 +93,12 @@ public class BitmaskWriterMain {
     /**
      * Runs this program with the given parameters.
      */
-    private static void run(String inputPath, String outputPath, String bitmaskExpr)
+    private static void run(String inputPath, String outputPath, String maskExpr)
             throws IOException,
                    ParseException {
 
         // Read the product (note that only 'nodes' are read, not the entire data!)
         Product product = ProductIO.readProduct(inputPath);
-
-        // Parse the given bit-mask expression string to a term which can efficiently
-        // be evaluated by the framework
-        Term bitmaskTerm = product.parseExpression(bitmaskExpr);
 
         // Get the scene width
         int w = product.getSceneRasterWidth();
@@ -111,29 +106,27 @@ public class BitmaskWriterMain {
         int h = product.getSceneRasterHeight();
 
         // Print out, what we are going to do...
-        System.out.println("writing bit-mask image file "
+        System.out.println("writing mask image file "
                            + outputPath
                            + " containing " + w + " x " + h + " pixels of type byte...");
 
-        // Open output stream for our bit-mask image
+        // Open output stream for our mask image
         FileOutputStream outputStream = new FileOutputStream(outputPath);
 
-        // Create the bit-mask buffer for a single scan line
-        byte[] bitmaskScanLine = new byte[w];
+        // Create the mask buffer for a single scan line
+        int[] maskScanLine = new int[w];
+        byte[] byteScanLine = new byte[w];
 
+        RenderedImage maskImage = product.getMaskImage(maskExpr, null).getImage(0);
         // For all scan lines in the product...
         for (int y = 0; y < h; y++) {
             // Read the bit-mask scan line at y
-            product.readBitmask(0, y, // x (=0) & y offsets
-                                w, 1, // width (=w) & height (=1)
-                                bitmaskTerm, // the parsed bit-mask expression
-                                bitmaskScanLine, // the bit-mask scan-line buffer
-                                (byte) 255, // the value for bitmaskScanLine(x,y)=TRUE
-                                (byte) 0, // the value for bitmaskScanLine(x,y)=FALSE
-                                ProgressMonitor.NULL);
-
+            maskImage.getData(new Rectangle(0, y, w, 1)).getSamples(0, y, w, 1, 0, maskScanLine);
+            for (int i = 0; i < maskScanLine.length; i++) {
+                byteScanLine[i] = (byte) maskScanLine[i];
+            }
             // write bit-mask scan line to image file
-            outputStream.write(bitmaskScanLine);
+            outputStream.write(byteScanLine);
         }
 
         // close bit-mask image file

@@ -17,6 +17,7 @@
 package org.acme.snap.examples.codesnippets.core.datamodel;
 
 import com.bc.ceres.core.PrintWriterProgressMonitor;
+import com.bc.ceres.glevel.MultiLevelImage;
 import org.esa.snap.core.dataio.ProductIO;
 import org.esa.snap.core.dataio.dimap.DimapProductWriterPlugIn;
 import org.esa.snap.core.datamodel.Band;
@@ -25,10 +26,11 @@ import org.esa.snap.core.datamodel.Product;
 import org.esa.snap.core.datamodel.ProductData;
 import org.esa.snap.core.datamodel.TiePointGeoCoding;
 import org.esa.snap.core.datamodel.TiePointGrid;
-import org.esa.snap.core.dataop.maptransf.Datum;
-import org.esa.snap.core.jexp.ParseException;
-import org.esa.snap.core.jexp.Term;
+import org.geotools.referencing.crs.DefaultGeographicCRS;
 
+import java.awt.Rectangle;
+import java.awt.image.Raster;
+import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -48,21 +50,24 @@ public class ProductExamples {
                 Product product = ProductIO.readProduct("C:/Projects/BEAM/data/MER_RR__1P_A.N1");
                 int width = product.getSceneRasterWidth();
                 int height = product.getSceneRasterHeight();
-                // parse a given expression
-                final Term term = product.parseExpression("not l2_flags.INVALID and not l1_flags.BRIGHT");
+                // the expression to be evaluated
+                String expression = "not l2_flags.INVALID and not l1_flags.BRIGHT";
                 // allocate boolean mask values for a single scan line
-                boolean[] maskLine = new boolean[width];
+                int[] maskLine = new int[width];
                 for (int y = 0; y < height; y++) {
                     // read mask for each scan line
-                    product.readBitmask(0, 0, width, 1, term, maskLine, new PrintWriterProgressMonitor(System.out));
-                    // process boolean values contained in maskLine here
+                    MultiLevelImage multiLevelMaskImage = product.getMaskImage(expression, null);
+                    RenderedImage maskImage = multiLevelMaskImage.getImage(0); // get the full resolution
+                    Raster data = maskImage.getData(new Rectangle(0, 0, width, 1));
+                    int firstChannelIndex = 0;
+                    data.getSamples(0, 0, width, 1, firstChannelIndex, maskLine);
+                    // process mask values contained in maskLine here
+                    // maskValue == 255 -> true
+                    // maskValue == 0 -> false
                     // ...
                 }
                 product.dispose();
             } catch (IOException e) {
-                // handle error here...
-                e.printStackTrace();
-            } catch (ParseException e) {
                 // handle error here...
                 e.printStackTrace();
             }
@@ -105,15 +110,14 @@ public class ProductExamples {
     }
 
     /**
-     * Attach a geolocation to a given product. In this example, the geolocation is defined by a tie-point geocoding
+     * Attach a geo-location to a given product. In this example, the geo-location is defined by a tie-point geocoding
      * attached to the product.
      *
-     * @param product
-     *
+     * @param product the product to add the tie-point geo-coding to.
      * @return the product with the attached tie-point geocoding
      */
     public Product addTiePointGeoCoding(Product product) {
-        // define the geolocation as two array containing latitude and longitude of the product for
+        // define the geo-location as two array containing latitude and longitude of the product for
         // a subsampled range of the pixels.
         float[] latitudes = {
                 64.508275f,
@@ -139,7 +143,7 @@ public class ProductExamples {
         };
 
         // Create two tie-point grids (i.e. subsampled bands)
-        // The constructo parameters are the following:
+        // The constructor parameters are the following:
         // name - String - the name of the tie-point grid
         // width - int - the width of the tie-point grid
         // height - int - the height of the tie-point grid
@@ -159,7 +163,7 @@ public class ProductExamples {
         product.addTiePointGrid(lonGrid);
 
         // create a tie-point geo coding with both tie point grids
-        GeoCoding coding = new TiePointGeoCoding(latGrid, lonGrid, Datum.WGS_84);
+        GeoCoding coding = new TiePointGeoCoding(latGrid, lonGrid, DefaultGeographicCRS.WGS84);
         // and attach it to the product
         product.setSceneGeoCoding(coding);
 
