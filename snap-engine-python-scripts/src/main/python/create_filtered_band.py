@@ -1,9 +1,6 @@
 # Here is how to configure SNAP for your Python version. Type:
 #   > cd ${SNAP_HOME}/bin
-#   > snap --nogui --nosplash --python C:\Python34\python.exe C:\Users\Norman\JavaProjects\senbox
-
-import sys
-# sys.path.append('C:\\Users\\Norman\\JavaProjects\\senbox')
+#   > snap --nogui --nosplash --python C:\Python34\python.exe C:\Users\USER_NAME\JavaProjects\senbox
 
 from snappy import jpy, Band, ProductIO, ProductUtils
 
