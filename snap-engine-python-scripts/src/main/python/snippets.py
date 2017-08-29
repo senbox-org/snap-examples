@@ -2,8 +2,6 @@
 #   > cd ${SNAP_HOME}/bin
 #   > snap --nogui --nosplash --python C:\Python34\python.exe C:\Users\Norman\JavaProjects\senbox
 
-import sys
-# sys.path.append('C:\\Users\\Norman\\JavaProjects\\senbox')
 
 import snappy
 #print('snappy.__file__:', snappy.__file__)
@@ -32,7 +30,6 @@ while writer_spi_it.hasNext():
     print("writer_spi: " + ', '.join(writer_spi.getFormatNames()) + " (" + writer_spi.getClass().getName() + ")")
 
 
-GPF.getDefaultInstance().getOperatorSpiRegistry().loadOperatorSpis()
 op_spi_it = GPF.getDefaultInstance().getOperatorSpiRegistry().getOperatorSpis().iterator()
 while op_spi_it.hasNext():
     op_spi = op_spi_it.next()
