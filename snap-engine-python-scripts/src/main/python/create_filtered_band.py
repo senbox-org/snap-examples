@@ -32,9 +32,6 @@ kernel = Kernel(9, 9, 4, 4, 1 / 64, kernel_data)
 
 filtered_band = GeneralFilterBand(filteredBandName, sourceRaster, opType, kernel, iterationCount)
 
-if isinstance(jpy.cast(sourceRaster, Band), Band):
-    ProductUtils.copySpectralBandProperties(sourceRaster, filtered_band)
-
 # Turn into real Band
 if realBand:
     target_band = Band(filtered_band.getName(), filtered_band.getDataType(),
