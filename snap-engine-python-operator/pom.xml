@@ -107,6 +107,7 @@
                 <configuration>
                     <licenseName>THE BEER-WARE LICENSE</licenseName>
                     <licenseFile>LICENSE.txt</licenseFile>
+                    <requiresRestart>true</requiresRestart>
                 </configuration>
             </plugin>
 			<plugin>
