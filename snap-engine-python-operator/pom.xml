@@ -22,7 +22,7 @@
 
     <groupId>com.acme.snap.examples</groupId>
     <artifactId>snap-engine-python-operator</artifactId>
-    <version>6.0.0</version>
+    <version>6.0.1-SNAPSHOT</version>
     <packaging>nbm</packaging>    
     <name>SNAP Engine Python Operator Example</name>
     <description>Example for a basic Python operator module</description>

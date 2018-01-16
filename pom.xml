@@ -19,7 +19,7 @@
 
     <groupId>com.acme.snap.examples</groupId>
     <artifactId>snap-examples</artifactId>
-    <version>6.0.0</version>
+    <version>6.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>SNAP Examples</name>

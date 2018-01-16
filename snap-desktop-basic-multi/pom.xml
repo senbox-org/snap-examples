@@ -21,7 +21,7 @@
 
     <groupId>com.acme.snap.examples</groupId>
     <artifactId>snap-desktop-basic-multi</artifactId>
-    <version>6.0.0</version>
+    <version>6.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>SNAP Desktop Basic Extension Example (Multi-Module)</name>
     <description>This multi-module sample project generates two NBM plugins for the SNAP Desktop application.
