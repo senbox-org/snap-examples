@@ -19,14 +19,14 @@
 
     <groupId>org.acme.snap</groupId>
     <artifactId>snap-desktop-examples</artifactId>
-    <version>7.0.0-SNAPSHOT</version>
+    <version>7.0.0</version>
     <packaging>nbm</packaging>
 
     <name>SNAP Desktop Examples</name>
     <description>SNAP Desktop Programming Examples</description>
 
     <properties>
-        <snap.version>7.0.0-SNAPSHOT</snap.version>
+        <snap.version>7.0.0</snap.version>
         <netbeans.version>RELEASE82</netbeans.version>
     </properties>
 
