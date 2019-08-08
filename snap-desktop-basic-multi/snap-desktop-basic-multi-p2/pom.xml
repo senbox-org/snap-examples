@@ -21,7 +21,7 @@
     <parent>
         <groupId>com.acme.snap.examples</groupId>
         <artifactId>snap-desktop-basic-multi</artifactId>
-        <version>7.0.0</version>
+        <version>8.0.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>snap-desktop-basic-multi-p2</artifactId>
