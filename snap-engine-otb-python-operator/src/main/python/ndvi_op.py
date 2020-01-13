@@ -1,9 +1,9 @@
 
-import snappy
-
+import numpy as np
 import otbApplication
 
-import numpy as np
+import snappy
+
 
 class NdviOp:
 
@@ -21,8 +21,8 @@ class NdviOp:
 
     def initialize(self, context):
 
-			  #get source product from 'source' parameter
-        source_product = context.getSourceProduct('source')
+			    # Via the context object the source product which shall be processed can be retrieved
+        source_product = context.getSourceProduct('sourceProduct')
 
         print('initialize: source product location is', source_product.getFileLocation().toString())
 
