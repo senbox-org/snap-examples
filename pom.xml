@@ -30,11 +30,11 @@
     </properties>
 
 	<modules>
-		<module>snap-engine-examples</module>
-		<module>snap-engine-java-operator</module>
-		<module>snap-engine-python-operator</module>
+        <module>snap-engine-examples</module>
+        <module>snap-engine-java-operator</module>
+        <module>snap-engine-python-operator</module>
         <module>snap-engine-python-scripts</module>
-		<module>snap-jython-examples</module>
+        <!-- <module>snap-jython-examples</module> --> deprecated
         <module>snap-desktop-examples</module>
         <module>snap-desktop-basic-single</module>
         <module>snap-desktop-basic-multi</module>
