@@ -3,18 +3,12 @@
     <folder name="Actions">
         <folder name="Operators">
             <file name="org-esa-snap-myop-MyOpAction.instance">
-                <attr name="instanceCreate"
-                      methodvalue="org.openide.awt.Actions.alwaysEnabled"/>
-                <attr name="delegate"
-                      methodvalue="org.esa.snap.core.gpf.ui.DefaultOperatorAction.create"/>
-                <attr name="displayName"
-                      stringvalue="Your menu display name here"/>
-                <attr name="dialogTitle"
-                      stringvalue="Your dialog title here"/>
-                <attr name="operatorName"
-                      stringvalue="MyOp"/>
-                <attr name="targetProductNameSuffix"
-                      stringvalue="_myop"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.alwaysEnabled"/>
+                <attr name="delegate" methodvalue="org.esa.snap.core.gpf.ui.DefaultOperatorAction.create"/>
+                <attr name="displayName" stringvalue="Your menu display name here"/>
+                <attr name="dialogTitle" stringvalue="Your dialog title here"/>
+                <attr name="operatorName" stringvalue="MyOp"/>
+                <attr name="targetProductNameSuffix" stringvalue="_myop"/>
             </file>
         </folder>
     </folder>
@@ -23,10 +17,8 @@
         <folder name="Optical">
             <folder name="Thematic Land Processing">
                 <file name="org-esa-snap-myop-MyOpAction.shadow">
-                    <attr name="originalFile"
-                          stringvalue="Actions/Operators/org-esa-snap-myop-MyOpAction.instance"/>
-                    <attr name="position"
-                          intvalue="10000"/>
+                    <attr name="originalFile" stringvalue="Actions/Operators/org-esa-snap-myop-MyOpAction.instance"/>
+                    <attr name="position" intvalue="10000"/>
                 </file>
             </folder>
         </folder>
