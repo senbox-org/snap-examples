@@ -8,6 +8,7 @@
                 <attr name="displayName" stringvalue="Your menu display name here"/>
                 <attr name="dialogTitle" stringvalue="Your dialog title here"/>
                 <attr name="operatorName" stringvalue="MyOp"/>
+                <attr name="helpId" stringvalue="MyOp"/>
                 <attr name="targetProductNameSuffix" stringvalue="_myop"/>
             </file>
         </folder>
