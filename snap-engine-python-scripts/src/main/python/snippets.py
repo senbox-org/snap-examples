@@ -46,3 +46,13 @@ w = p.getSceneRasterWidth()
 h = p.getSceneRasterHeight()
 
 print(name + ":", w, "x", h, "pixels")
+
+
+## disable System.out
+System = jpy.get_type('java.lang.System')
+PrintStream = jpy.get_type('java.io.PrintStream')
+NullStream = jpy.get_type('org.apache.commons.io.output.NullOutputStream')
+
+System.setOut(new PrintStream(new NullOutputStream()))
+# maybe also 
+System.setErr(new PrintStream(new NullOutputStream()))
