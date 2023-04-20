@@ -16,17 +16,17 @@
   -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.acme.snap.examples</groupId>
     <artifactId>snap-engine-otb-python-operator</artifactId>
     <version>4.0.0</version>
-    <packaging>nbm</packaging>    
+    <packaging>nbm</packaging>
     <name>SNAP Engine Python Extension Example (NDVI processor)</name>
     <description>Template for a basic Python extension module that provides a new NDVI processor</description>
-	
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <snap.version>4.0.0</snap.version>
