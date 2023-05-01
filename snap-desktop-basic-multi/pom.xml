@@ -21,7 +21,7 @@
 
     <groupId>com.acme.snap.examples</groupId>
     <artifactId>snap-desktop-basic-multi</artifactId>
-    <version>10.0.0-SNAPSHOT</version>
+    <version>10.0.0-JDK11SHOT</version>
     <packaging>pom</packaging>
     <name>SNAP Desktop Basic Extension Example (Multi-Module)</name>
     <description>This multi-module sample project generates two NBM plugins for the SNAP Desktop application.
@@ -30,7 +30,7 @@
     <url>https://senbox.atlassian.net/wiki/display/SNAP/How+to+develop+a+SNAP+extension+module</url>
 
     <properties>
-        <snap.version>10.0.0-SNAPSHOT</snap.version>
+        <snap.version>10.0.0-JDK11SHOT</snap.version>
         <netbeans.version>RELEASE82</netbeans.version>
     </properties>
 
