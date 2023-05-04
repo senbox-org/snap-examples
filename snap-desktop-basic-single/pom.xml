@@ -30,7 +30,7 @@
 
     <properties>
         <snap.version>10.0.0-JDK11SHOT</snap.version>
-        <netbeans.version>RELEASE82</netbeans.version>
+        <netbeans.version>RELEASE113</netbeans.version>
     </properties>
 
     <repositories>
