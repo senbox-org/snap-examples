@@ -21,7 +21,7 @@
     <parent>
         <groupId>com.acme.snap.examples</groupId>
         <artifactId>snap-desktop-basic-multi</artifactId>
-        <version>10.0.0-SNAPSHOT</version>
+        <version>10.0.0-JDK11SHOT</version>
     </parent>
 
     <artifactId>snap-desktop-basic-multi-p1</artifactId>

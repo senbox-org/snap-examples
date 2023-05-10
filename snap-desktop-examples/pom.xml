@@ -19,15 +19,15 @@
 
     <groupId>org.acme.snap</groupId>
     <artifactId>snap-desktop-examples</artifactId>
-    <version>10.0.0-SNAPSHOT</version>
+    <version>10.0.0-JDK11SHOT</version>
     <packaging>nbm</packaging>
 
     <name>SNAP Desktop Examples</name>
     <description>SNAP Desktop Programming Examples</description>
 
     <properties>
-        <snap.version>10.0.0-SNAPSHOT</snap.version>
-        <netbeans.version>RELEASE82</netbeans.version>
+        <snap.version>10.0.0-JDK11SHOT</snap.version>
+        <netbeans.version>RELEASE113</netbeans.version>
     </properties>
 
     <dependencies>
@@ -117,8 +117,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>11</source>
+                    <target>11</target>
                     <debug>true</debug>
                     <encoding>UTF-8</encoding>
                 </configuration>
@@ -139,7 +139,7 @@
                                     <version>[3.2.5,)</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>1.8</version>
+                                    <version>11</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>

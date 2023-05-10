@@ -20,14 +20,14 @@
 
     <groupId>com.acme.snap.examples</groupId>
     <artifactId>snap-engine-examples</artifactId>
-    <version>10.0.0-SNAPSHOT</version>
+    <version>10.0.0-JDK11SHOT</version>
     <packaging>nbm</packaging>
 
     <name>SNAP Engine Examples</name>
     <description>SNAP Engine Programming Examples</description>
 
     <properties>
-        <snap.version>10.0.0-SNAPSHOT</snap.version>
+        <snap.version>10.0.0-JDK11SHOT</snap.version>
     </properties>
 
     <dependencies>
@@ -79,8 +79,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>11</source>
+                    <target>11</target>
                     <debug>true</debug>
                     <encoding>UTF-8</encoding>
                 </configuration>
@@ -101,7 +101,7 @@
                                     <version>[3.2.5,)</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>1.8</version>
+                                    <version>11</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>

@@ -22,7 +22,7 @@
 
     <groupId>com.acme.snap.examples</groupId>
     <artifactId>snap-engine-python-operator</artifactId>
-    <version>10.0.0-SNAPSHOT</version>
+    <version>10.0.0-JDK11SHOT</version>
     <packaging>nbm</packaging>
     <name>SNAP Engine Python Operator Example</name>
     <description>Example for a basic Python operator module</description>
@@ -57,7 +57,7 @@
                                     <version>[3.2.5,)</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>1.8</version>
+                                    <version>11</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>

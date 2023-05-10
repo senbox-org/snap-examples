@@ -20,7 +20,7 @@
 
     <groupId>com.acme.snap.examples</groupId>
     <artifactId>snap-jython-examples</artifactId>
-    <version>10.0.0-SNAPSHOT</version>
+    <version>10.0.0-JDK11SHOT</version>
     <packaging>jar</packaging>    
     <name>SNAP Desktop Jython Plugin Examples</name>
     <description>This sample project generates a single Jython plugin for the SNAP Desktop application.</description>
@@ -29,7 +29,7 @@
 
     <properties>
         <snap.version>8.0.0</snap.version>
-        <netbeans.version>RELEASE82</netbeans.version>
+        <netbeans.version>RELEASE113</netbeans.version>
     </properties>
     
     <!-- 
