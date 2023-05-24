@@ -10,15 +10,15 @@
 
 import ndvi_algo
 import numpy
-import snappy
-from snappy import FlagCoding
+import esa_snappy
+from esa_snappy import FlagCoding
 
 NDVI_HIGH_THRESHOLD = 0.8
 NDVI_LOW_THRESHOLD = -0.5
 
-# If a Java type is needed which is not imported by snappy by default it can be retrieved manually.
+# If a Java type is needed which is not imported by esa_snappy by default it can be retrieved manually.
 # First import jpy
-from snappy import jpy
+from esa_snappy import jpy
 
 # and then import the type
 Float = jpy.get_type('java.lang.Float')
@@ -60,22 +60,22 @@ class NdviOp:
         self.algo = ndvi_algo.NdviAlgo(NDVI_LOW_THRESHOLD, NDVI_HIGH_THRESHOLD)
 
         # Create the target product
-        ndvi_product = snappy.Product('py_NDVI', 'py_NDVI', width, height)
+        ndvi_product = esa_snappy.Product('py_NDVI', 'py_NDVI', width, height)
         # ProductUtils provides several useful helper methods to build the target product.
         # In most cases it is sufficient to copy the information from the source to the target.
         # That's why mainly copy methods exist like copyBand(...), copyGeoCoding(...), copyMetadata(...)
-        snappy.ProductUtils.copyGeoCoding(source_product, ndvi_product)
-        snappy.ProductUtils.copyMetadata(source_product, ndvi_product)
+        esa_snappy.ProductUtils.copyGeoCoding(source_product, ndvi_product)
+        esa_snappy.ProductUtils.copyMetadata(source_product, ndvi_product)
         # For copying the time information no helper method exists yet, but will come in SNAP 5.0
         ndvi_product.setStartTime(source_product.getStartTime())
         ndvi_product.setEndTime(source_product.getEndTime())
 
         # Adding new bands to the target product is straight forward.
-        self.ndvi_band = ndvi_product.addBand('ndvi', snappy.ProductData.TYPE_FLOAT32)
+        self.ndvi_band = ndvi_product.addBand('ndvi', esa_snappy.ProductData.TYPE_FLOAT32)
         self.ndvi_band.setDescription('The Normalized Difference Vegetation Index')
         self.ndvi_band.setNoDataValue(Float.NaN)
         self.ndvi_band.setNoDataValueUsed(True)
-        self.ndvi_flags_band = ndvi_product.addBand('ndvi_flags', snappy.ProductData.TYPE_UINT8)
+        self.ndvi_flags_band = ndvi_product.addBand('ndvi_flags', esa_snappy.ProductData.TYPE_UINT8)
         self.ndvi_flags_band.setDescription('The flag information')
 
         # Create a flagCoding for the flag band. This helps to display the information properly within SNAP.

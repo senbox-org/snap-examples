@@ -8,7 +8,7 @@
     <!-- The alias is a more user-friendly name, e.g. to be used on the command line -->
     <alias>py_ndvi_op</alias>
     <!-- The operatorClass must always be org.esa.snap.gpf.python.PyOperator -->
-    <operatorClass>org.esa.snap.python.gpf.PyOperator</operatorClass>
+    <operatorClass>org.esa.snap.snappy.gpf.PyOperator</operatorClass>
 
     <version>1.0</version>
     <authors>Brockmann Consult GmbH</authors>
