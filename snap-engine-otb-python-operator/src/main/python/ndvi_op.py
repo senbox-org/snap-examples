@@ -2,13 +2,13 @@
 import numpy as np
 import otbApplication
 
-import snappy
+import esa_snappy
 
 
 class NdviOp:
 
     def __init__(self):
-        #jpy = snappy.jpy
+        #jpy = esa_snappy.jpy
         #jpy.diag.flags = jpy.diag.F_ALL
 
         self.red_band = None
@@ -53,14 +53,14 @@ class NdviOp:
         height = source_product.getSceneRasterHeight()
 
 				#create target product 'ndvi_product' with same size of source product
-        ndvi_product = snappy.Product('py_NDVI', 'py_NDVI', width, height)
-        snappy.ProductUtils.copyGeoCoding(source_product, ndvi_product)
+        ndvi_product = esa_snappy.Product('py_NDVI', 'py_NDVI', width, height)
+        esa_snappy.ProductUtils.copyGeoCoding(source_product, ndvi_product)
 
 				#add a band to ndvi_product to store the result of ndvi
-        self.ndvi_band = ndvi_product.addBand('ndvi', snappy.ProductData.TYPE_FLOAT32)
+        self.ndvi_band = ndvi_product.addBand('ndvi', esa_snappy.ProductData.TYPE_FLOAT32)
 
 				#add a band to ndvi_product to store ndvi_flags.
-        self.ndvi_flags_band = ndvi_product.addBand('ndvi_flags', snappy.ProductData.TYPE_UINT8)
+        self.ndvi_flags_band = ndvi_product.addBand('ndvi_flags', esa_snappy.ProductData.TYPE_UINT8)
 
         context.setTargetProduct(ndvi_product)
 

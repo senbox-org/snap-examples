@@ -2,7 +2,7 @@
 #   > cd ${SNAP_HOME}/bin
 #   > snap --nogui --nosplash --python C:\Python34\python.exe C:\Users\USER_NAME\JavaProjects\senbox
 
-from snappy import jpy, Band, ProductIO, ProductUtils
+from esa_snappy import jpy, Band, ProductIO, ProductUtils
 
 OpType = jpy.get_type('org.esa.snap.core.datamodel.GeneralFilterBand$OpType')
 GeneralFilterBand = jpy.get_type('org.esa.snap.core.datamodel.GeneralFilterBand')

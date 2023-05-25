@@ -3,18 +3,18 @@
 #   > snap --nogui --nosplash --python C:\Python34\python.exe C:\Users\Norman\JavaProjects\senbox
 
 
-import snappy
-#print('snappy.__file__:', snappy.__file__)
+import esa_snappy
+#print('esa_snappy.__file__:', esa_snappy.__file__)
 
-from snappy import jpy, GPF, HashMap, File
+from esa_snappy import jpy, GPF, HashMap, File
 
-ProductIOPlugInManager = snappy.jpy.get_type('org.esa.snap.core.dataio.ProductIOPlugInManager')
+ProductIOPlugInManager = esa_snappy.jpy.get_type('org.esa.snap.core.dataio.ProductIOPlugInManager')
 Logger = jpy.get_type('java.util.logging.Logger')
 Level = jpy.get_type('java.util.logging.Level')
 Arrays = jpy.get_type('java.util.Arrays')
 
 Logger.getLogger('').setLevel(Level.OFF)
-snappy.SystemUtils.LOG.setLevel(Level.OFF)
+esa_snappy.SystemUtils.LOG.setLevel(Level.OFF)
 
 
 
