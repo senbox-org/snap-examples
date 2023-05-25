@@ -1,7 +1,7 @@
 ⚠ **The Jython approach is not fully elaborated and therefore not well documented. If you would like to use 
 Jython and need assistance, please show up in the SNAP Forum. We discourage the usage of Jython. As of SNAP 8 
 the Jython support is not part of the SNAP standard distribution anymore. However, the documentation 
-referringto the usage of Jython in earlier SNAP versions is kept below.**
+referring to the usage of Jython in earlier SNAP versions is kept below.**
 
 **See issue: [SNAP-1326: Provide snap-jython as seperate plugin](https://senbox.atlassian.net/browse/SNAP-1326)**
 
@@ -57,8 +57,8 @@ class PluginActivator:
         pass
 ```
 
-Example code for a SNAP Desktop extension using Jython can be found on 
-GitHub [here](https://github.com/senbox-org/snap-examples/tree/master/snap-jython-examples).
+Example code for a SNAP Desktop extension using Jython 
+can be found [here](https://github.com/senbox-org/snap-examples/tree/master/snap-jython-examples/snap-desktop-plugins).
 
 #### Plugin registration file
 
